@@ -1,0 +1,50 @@
+{
+    "name":"CFColdB_app",
+    "version":"1.0.0",
+    "author":"You",
+    "shortDescription":"A modern ColdBox CFML application template with best practices and tools integrated.",
+    "location":"forgeboxStorage",
+    "slug":"cfcoldbapp",
+    "createPackageDirectory":false,
+    "type":"mvc",
+    "keywords":[],
+    "repository":{
+        "type":"",
+        "url":""
+    },
+    "ignore":[],
+    "dependencies":{
+        "coldbox":"^8.0.0",
+        "cborm":"^4.12.1+10",
+        "cbmessagebox":"^4.1.0+1"
+    },
+    "devDependencies":{
+        "testbox":"*",
+        "route-visualizer":"*",
+        "commandbox-boxlang":"*",
+        "commandbox-cfformat":"*"
+    },
+    "installPaths":{
+        "coldbox":"lib/coldbox/",
+        "testbox":"lib/testbox/",
+        "route-visualizer":"lib/modules/route-visualizer/",
+        "cborm":"lib/modules/cborm/",
+        "cbmessagebox":"lib/modules/cbmessagebox/"
+    },
+    "installPathConventions":{
+        "modules":"lib/modules"
+    },
+    "scripts":{
+        "postInstall":"pathExists .env || cp .env.example .env",
+        "format":"cfformat run app/,tests/specs/,*.cfc --overwrite --verbose",
+        "format:check":"cfformat check app/,tests/specs/,*.cfc ./.cfformat.json --verbose",
+        "format:watch":"cfformat watch path='app/**/*.cfc,tests/specs/,*.cfc' settingsPath='.cfformat.json'",
+        "build:docker":"!docker build --no-cache -t my-coldbox-app -f ./docker/Dockerfile ./",
+        "run:docker":"!docker run -it -p 8080:8080 my-coldbox-app"
+    },
+    "testbox":{
+        "runner":"/tests/runner.cfm"
+    },
+    "language":"CFML",
+    "description":"A ColdBox Application created with the ColdBox CLI"
+}

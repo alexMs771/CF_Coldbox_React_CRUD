@@ -1,0 +1,10 @@
+{
+    "dependencies":{
+        "cbmessagebox":"^4.1.0+1",
+        "cors":"^3.0.9"
+    },
+    "installPaths":{
+        "cbmessagebox":"modules/cbmessagebox/",
+        "cors":"modules/cors/"
+    }
+}
