@@ -8,9 +8,7 @@ component extends="coldbox.system.EventHandler" {
 		event.setView( "main/index" );
 	}
 
-	/**
-	 * Produce some restfulf data
-	 */
+	
 	function data( event, rc, prc ){
 		return [
 			{ "id" : createUUID(), name : "Luis" },
